@@ -1,0 +1,8 @@
+{# website/templates/index.html_ #}
+
+{% extends "layout.html" %}
+{% block title %}Hello world!{% endblock %}
+{% block body %}
+    {{ super() }}
+    <h2>This heading is defined in the child.</h2>
+{% endblock %}
