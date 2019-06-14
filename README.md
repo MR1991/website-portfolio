@@ -3,8 +3,12 @@
 Repository for portfolio website hosted with flask.
 
 ## Contents
-Automate deployment
 
+
+Connect to VM:
+```
+gcloud compute --project "website-template-226613" ssh --zone "us-central1-a" "mauricerichard1991@website-prod" -- -R 52698:localhost:52698 -L 8000:localhost:8000
+```
 
 ```
 requirements.txt
@@ -26,6 +30,18 @@ yourapp/
 
 ```
 
+To add new website:
+```
+cd /etc/systemd/system/
+cp website.service website2.service
+# change name of directory 3 times
+sudo systemctl start website2'
+sudo systemctl enable website2'
+sudo systemctl status website2'
+
+sudo nano /etc/nginx/sites-available/default'
+# Add new serverblock with servernam website2.com
+```
 
 
 
